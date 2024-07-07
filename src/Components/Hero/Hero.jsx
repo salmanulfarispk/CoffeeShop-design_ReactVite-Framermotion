@@ -142,8 +142,11 @@ const Hero = () => {
         {/** sidebar menu section  */}
 
         {openSidebar && (
-          <div className='absolute top-0 right-0 w-[140px] h-full
-           bg-gradient-to-b from-primary/80 to-primaryDArk/80 backdrop-blur-sm z-10'>
+          <motion.div className='absolute top-0 right-0 w-[140px] h-full
+           bg-gradient-to-b from-primary/80 to-primaryDArk/80 backdrop-blur-sm z-10'
+            initial={{x: "100%"}}
+            whileInView={{x: 0}}
+           >
             <div className='w-full h-full flex justify-center items-center'>
               <div className='flex flex-col justify-center items-center gap-6 text-white'>
                 {/**line */}
@@ -163,7 +166,7 @@ const Hero = () => {
                 <div className='w-[1px] h-[70px] bg-white'></div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
 
 
