@@ -1,6 +1,7 @@
 import Hero from "./Components/Hero/Hero"
 import './App.css'
 import Services from "./Components/Services/Services"
+import WhereToBuy from "./Components/WhereToBuy/WhereToBuy"
 
 function App() {
   
@@ -9,7 +10,8 @@ function App() {
     <div className="overflow-x-hidden">
      
       <Hero/>
-       <Services/>
+      <Services/>
+      <WhereToBuy/>
     </div>
   )
 }
