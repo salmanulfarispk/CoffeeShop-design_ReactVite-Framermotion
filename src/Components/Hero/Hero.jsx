@@ -130,7 +130,7 @@ const Hero = () => {
                   <h1 className='text-sm opacity-55 leading-loose'>Experience the pure essence of coffee with our black tumbler brew. Bold, robust, and unapologetically rich—perfect
                     for those who savor the true taste of coffee.</h1>
                 </div>
-                <div className='absolute -top-6 -right-10 w-[275px] h-[190px] bg-darkGray/50 '>
+                <div className='absolute -top-6 -right-10 w-[250px] h-[190px] bg-darkGray/50 '>
                 </div>
               </div>
 
