@@ -1,5 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Coffee1  from "../../assets/blackCoffee.png"
+import Coffee2  from "../../assets/Hot.png"
+import Coffee3  from "../../assets/cold.png"
+
 
 
 
@@ -22,14 +26,28 @@ import { motion } from 'framer-motion'
         title: "Cold Coffee",
         desc:"Refresh yourself with the smooth and invigorating taste of our chilled cold coffee."
     },
- ]
+ ];
+
+ const cardVariants={
+     hidden:{opacity:0 ,y: 20},
+     visible:{
+        opacity: 1,
+         y: 0,
+         transition:{
+            type:"spring",
+            stiffness: 150,
+            damping: 10,
+            ease: "easeInOut"
+         },
+        },
+ }
 
 const Services = () => {
   return (
     <div className='container my-16 space-y-4'>
         {/**Header section */}
         <div className='text-center max-w-lg mx-auto space-y-2'>
-            <motion.h1 className='text-4xl font-bold text-lightGray'
+            <motion.h1 className='text-3xl font-bold text-lightGray'
               initial={{opacity: 0, y:100}}
               whileInView={{opacity:1 ,y: 0}}
               transition={{
@@ -41,7 +59,7 @@ const Services = () => {
             >
                 Fresh and <span className='text-primary'>Tasty coffee</span>
             </motion.h1>
-            <motion.p className='text-lg opacity-80'
+            <motion.p className='opacity-80'
                initial={{opacity: 0, scale: 0.5}}
                whileInView={{opacity:1 ,scale: 1}}
                transition={{
@@ -55,10 +73,18 @@ const Services = () => {
         </div>
         {/**card section */}
           
-         <div>
-
-
-            
+         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
+            {servicesData.map((item)=>(
+                <div key={item.id} className='text-center p-4 space-y-6'>
+                   <img src={item.image} alt='blackCofee'
+                    className='img-shadow2 max-w-[200px] mx-auto hover:scale-125 duration-300 cursor-pointer'
+                   />
+                      <div className='space-y-2'>
+                        <h1 className='text-2xl text-primary font-bold'>{item.title}</h1>
+                        <h1 className='text-darkGray'>{item.desc}</h1>
+                      </div>
+                </div>
+            ))}
          </div>
     </div>
   )
