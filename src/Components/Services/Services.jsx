@@ -42,6 +42,17 @@ import Coffee3  from "../../assets/cold.png"
         },
  }
 
+ const containerVariants={
+    hidden:{opacity:1},
+    visible:{
+        opacity:1,
+        transition:{
+            delay:0.6,
+            staggerChildren: 0.4   //delay between animations
+        }
+    }
+ }
+
 const Services = () => {
   return (
     <div className='container my-16 space-y-4'>
@@ -73,9 +84,16 @@ const Services = () => {
         </div>
         {/**card section */}
           
-         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
+         <motion.div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'
+            initial="hidden" 
+            whileInView={"visible"}
+            viewport={{ amount: 0.8 }}  //means the animation will trigger when 80% of the element is visible in the viewport.
+            variants={containerVariants}
+         >
             {servicesData.map((item)=>(
-                <div key={item.id} className='text-center p-4 space-y-6'>
+                <motion.div key={item.id} className='text-center p-4 space-y-6'
+                 variants={cardVariants}
+                >
                    <img src={item.image} alt='blackCofee'
                     className='img-shadow2 max-w-[200px] mx-auto hover:scale-125 duration-300 cursor-pointer'
                    />
@@ -83,9 +101,9 @@ const Services = () => {
                         <h1 className='text-2xl text-primary font-bold'>{item.title}</h1>
                         <h1 className='text-darkGray'>{item.desc}</h1>
                       </div>
-                </div>
+                </motion.div>
             ))}
-         </div>
+         </motion.div>
     </div>
   )
 }
