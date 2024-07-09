@@ -3,6 +3,7 @@ import './App.css'
 import Services from "./Components/Services/Services"
 import WhereToBuy from "./Components/WhereToBuy/WhereToBuy"
 import { BannerX } from "./Components/Banner/Banner"
+import Footer from "./Components/Footer/Footer"
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Services/>
       <WhereToBuy/>
        <BannerX/>
+       <Footer/>
     </div>
   )
 }
