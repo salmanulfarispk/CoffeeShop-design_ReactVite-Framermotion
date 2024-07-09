@@ -35,7 +35,7 @@ const Hero = () => {
 
               <motion.h1 className='text-7xl font-bold leading-tight ml-14'
                 initial={{ opacity: 0, y: -100 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   type: "spring",
                   stiffness: 100,
@@ -47,7 +47,7 @@ const Hero = () => {
               </motion.h1>
               <motion.div className='relative'
                 initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   type: "spring",
                   stiffness: 100,
@@ -70,7 +70,8 @@ const Hero = () => {
             <div className='relative'>
               <motion.img src={BlackCoffe}
                 initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{once: true}}
                 transition={{
                   type: "spring",
                   stiffness: 100,   //it determines how fast the spring snaps back to its original position.Higher values results quicker animation and Lower values create a softer animation.
@@ -84,7 +85,7 @@ const Hero = () => {
               <motion.div className='absolute top-24 -right-16
                  border-primary rounded-full w-[180px] h-[180px] border-[20px] z-10'
                 initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   type: "spring",
                   stiffness: 100,
@@ -96,7 +97,7 @@ const Hero = () => {
               {/*background big text */}
               <motion.div className='absolute -top-20 left-[200px] z-[1]'
                 initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 transition={{
                   type: "spring",
                   stiffness: 100,
@@ -112,9 +113,10 @@ const Hero = () => {
             </div>
 
             {/*Third div section */}
+            <div className='hidden lg:block'>
             <motion.div className='text-lightOrange mt-[100px] md:mt-0 p-4 space-y-28'
               initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 type: "spring",
                 stiffness: 100,
@@ -135,6 +137,7 @@ const Hero = () => {
               </div>
 
             </motion.div>
+            </div>
 
           </div>
         </div>
@@ -143,7 +146,7 @@ const Hero = () => {
 
         {openSidebar && (
           <motion.div className='absolute top-0 right-0 w-[140px] h-full
-           bg-gradient-to-b from-primary/80 to-primaryDArk/80 backdrop-blur-sm z-10'
+           bg-gradient-to-b from-primary/80 to-primaryDArk/80 backdrop-blur-sm z-40'
             initial={{x: "100%"}}
             whileInView={{x: 0}}
            >
