@@ -95,7 +95,7 @@ const Services = () => {
                  variants={cardVariants}
                 >
                    <img src={item.image} alt='blackCofee'
-                    className='img-shadow2 max-w-[200px] mx-auto hover:scale-125 duration-300 cursor-pointer'
+                    className='img-shadow2 max-w-[150px] sm:max-w-[200px] mx-auto hover:scale-125 duration-300 cursor-pointer'
                    />
                       <div className='space-y-2'>
                         <h1 className='text-2xl text-primary font-bold'>{item.title}</h1>
